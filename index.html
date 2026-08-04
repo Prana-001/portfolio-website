@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Pranav Tomar — Aspiring Cybersecurity Engineer & Red Teaming Enthusiast. Diploma Computer Engineering student from Maharashtra, India.">
-<title>Pranav Tomar | Cybersecurity Engineer</title>
+<meta name="description" content="Pranav Tomar — Cybersecurity Researcher & Red Teaming Enthusiast. Diploma Computer Engineering student from Maharashtra, India.">
+<title>Pranav Tomar | Cybersecurity Researcher</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
@@ -389,6 +389,39 @@
     font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; margin-top: 1rem;
   }
 
+  /* PROJECTS */
+  #projects { background: var(--bg-primary); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem; }
+  .project-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 2rem;
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: all var(--transition); position: relative; overflow: hidden;
+  }
+  .project-card:hover {
+    border-color: var(--border-hover); box-shadow: var(--shadow-hover);
+    transform: translateY(-4px); background: var(--bg-card-hover);
+  }
+  .project-icon {
+    width: 48px; height: 48px; background: var(--accent-muted); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--accent); font-size: 1.3rem; margin-bottom: 1.2rem;
+  }
+  .project-title { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem; }
+  .project-desc { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.4rem; flex-grow: 1; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .project-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    background: var(--accent-muted); color: var(--accent);
+    border: 1px solid var(--border); padding: 3px 10px; border-radius: 99px;
+  }
+  .project-links { display: flex; gap: 1rem; align-items: center; }
+  .project-link {
+    color: var(--accent); text-decoration: none; font-size: 0.88rem; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 6px; transition: color var(--transition);
+  }
+  .project-link:hover { color: var(--teal); }
+
   /* RESUME */
   .resume-inner {
     background: var(--bg-card); border: 1px solid var(--border);
@@ -530,6 +563,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#certifications">Certifications</a></li>
     <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -547,6 +581,7 @@
   <a href="#about" onclick="closeMobile()">About</a>
   <a href="#skills" onclick="closeMobile()">Skills</a>
   <a href="#experience" onclick="closeMobile()">Experience</a>
+  <a href="#projects" onclick="closeMobile()">Projects</a>
   <a href="#certifications" onclick="closeMobile()">Certifications</a>
   <a href="#resume" onclick="closeMobile()">Resume</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
@@ -556,18 +591,19 @@
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge reveal"><i class="fas fa-shield-halved"></i> Cybersecurity Engineering</div>
+      <div class="hero-badge reveal"><i class="fas fa-shield-halved"></i> Cybersecurity Research</div>
       <h1 class="hero-name reveal reveal-delay-1">
         <span class="first">Pranav</span><br>
         <span class="last">Tomar</span>
       </h1>
       <p class="hero-title reveal reveal-delay-2"><span id="typedRole" class="typed-text"></span></p>
       <p class="hero-desc reveal reveal-delay-3">
-        Second-year Diploma student in Computer Engineering with hands-on cybersecurity experience in Red Teaming, VAPT, and network security. Passionate about identifying and mitigating security vulnerabilities using industry-standard tools. Actively sharpening skills on TryHackMe and Hack The Box.
+        Second-year Diploma student in Computer Engineering with hands-on cybersecurity research experience in Red Teaming, VAPT, and network security. Passionate about identifying and mitigating security vulnerabilities using industry-standard tools. Actively sharpening skills on TryHackMe and Hack The Box.
       </p>
       <div class="hero-btns reveal reveal-delay-4">
         <a href="#resume" class="btn-primary"><i class="fas fa-file-lines"></i> View Resume</a>
         <a href="#contact" class="btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+        <a href="https://github.com/Prana-001" target="_blank" rel="noopener" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://www.linkedin.com/in/pranav-tomar-509301332" target="_blank" rel="noopener" class="btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
       <div class="hero-tags reveal">
@@ -710,6 +746,27 @@
       <div class="exp-header">
         <div>
           <div class="exp-role">Cybersecurity Intern</div>
+          <div class="exp-company">TechnoHacks · Remote</div>
+        </div>
+        <div class="exp-date">Present</div>
+      </div>
+      <ul class="exp-bullets">
+        <li>Engaging in hands-on cybersecurity tasks, vulnerability assessment, and threat analysis</li>
+        <li>Researching and developing tools for web security, network analysis, and vulnerability detection</li>
+        <li>Applying ethical hacking methodologies to evaluate and strengthen system security controls</li>
+      </ul>
+      <div class="exp-tags">
+        <span class="exp-tag">Cybersecurity</span>
+        <span class="exp-tag">Threat Analysis</span>
+        <span class="exp-tag">VAPT</span>
+        <span class="exp-tag">Security Research</span>
+      </div>
+    </div>
+
+    <div class="exp-card reveal reveal-delay-1">
+      <div class="exp-header">
+        <div>
+          <div class="exp-role">Cybersecurity Intern</div>
           <div class="exp-company">ShadowFox · Remote</div>
         </div>
         <div class="exp-date">Dec 2025 – Jan 2026</div>
@@ -759,10 +816,79 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container section-wrap">
+    <p class="section-label reveal">04 — Portfolio</p>
+    <h2 class="section-title reveal">Featured <span>Projects</span></h2>
+    <div class="section-divider reveal"></div>
+    <div class="projects-grid">
+
+      <div class="project-card reveal">
+        <div>
+          <div class="project-icon"><i class="fas fa-globe"></i></div>
+          <h3 class="project-title">Web-Technology-Detector</h3>
+          <p class="project-desc">A cybersecurity reconnaissance tool designed to identify web technologies, CMS frameworks, server headers, and third-party scripts running on target web applications.</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Web Security</span>
+            <span class="project-tag">Reconnaissance</span>
+            <span class="project-tag">OSINT</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Prana-001/Web-Technology-Detector" target="_blank" rel="noopener" class="project-link">
+            <i class="fab fa-github"></i> GitHub Repo <i class="fas fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-1">
+        <div>
+          <div class="project-icon"><i class="fas fa-envelope-open-text"></i></div>
+          <h3 class="project-title">Email-Header-Analyzer</h3>
+          <p class="project-desc">A forensic tool for parsing and inspecting raw email headers to detect spoofing, phishing indicators, SPF/DKIM/DMARC authentication, and hop-by-hop server IP traces.</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Email Security</span>
+            <span class="project-tag">Phishing Analysis</span>
+            <span class="project-tag">Forensics</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Prana-001/Email-Header-Analyzer" target="_blank" rel="noopener" class="project-link">
+            <i class="fab fa-github"></i> GitHub Repo <i class="fas fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="project-card reveal reveal-delay-2">
+        <div>
+          <div class="project-icon"><i class="fas fa-shield-virus"></i></div>
+          <h3 class="project-title">URL-Safety-Checker</h3>
+          <p class="project-desc">A security scanner and web app that analyzes URLs for malicious patterns, suspicious redirects, phishing risk scores, and threat intelligence indicators.</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Flask</span>
+            <span class="project-tag">Malware Analysis</span>
+            <span class="project-tag">Threat Detection</span>
+          </div>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Prana-001/URL-Safety-Checker" target="_blank" rel="noopener" class="project-link">
+            <i class="fab fa-github"></i> GitHub Repo <i class="fas fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CERTIFICATIONS -->
 <section id="certifications">
   <div class="container section-wrap">
-    <p class="section-label reveal">04 — Credentials</p>
+    <p class="section-label reveal">05 — Credentials</p>
     <h2 class="section-title reveal">My <span>Certifications</span></h2>
     <div class="section-divider reveal"></div>
     <div class="certs-grid">
@@ -857,6 +983,13 @@
               <span>pranavtomar001@gmail.com</span>
             </div>
           </a>
+          <a href="https://github.com/Prana-001" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-2">
+            <div class="cc-icon"><i class="fab fa-github"></i></div>
+            <div class="cc-text">
+              <strong>GitHub</strong>
+              <span>Prana-001</span>
+            </div>
+          </a>
           <a href="https://www.linkedin.com/in/pranav-tomar-509301332" target="_blank" rel="noopener" class="contact-card reveal reveal-delay-2">
             <div class="cc-icon"><i class="fab fa-linkedin"></i></div>
             <div class="cc-text">
@@ -903,7 +1036,7 @@
 <footer>
   <div class="footer-left">
     <div class="fn">Pranav Tomar</div>
-    <div class="ft">Aspiring Cybersecurity Engineer</div>
+    <div class="ft">Cybersecurity Researcher</div>
   </div>
   <div class="footer-copy">&copy; 2025 Pranav Tomar. All rights reserved.</div>
   <a href="#hero" class="back-top"><i class="fas fa-arrow-up"></i> Back to top</a>
@@ -952,7 +1085,7 @@
   reveals.forEach(r => ro.observe(r));
 
   // TYPING
-  const roles = ['Cybersecurity Engineer', 'Red Teaming Enthusiast', 'Penetration Tester', 'VAPT Practitioner', 'Linux Practitioner'];
+  const roles = ['Cybersecurity Researcher', 'Red Teaming Enthusiast', 'Penetration Tester', 'VAPT Practitioner', 'Linux Practitioner'];
   let ri = 0, ci = 0, deleting = false;
   const el = document.getElementById('typedRole');
   function type() {
