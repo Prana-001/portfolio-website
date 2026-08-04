@@ -11,41 +11,41 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   :root {
-    --bg-primary: #0a0e1a;
-    --bg-secondary: #0f1628;
-    --bg-card: #131d35;
-    --bg-card-hover: #1a2540;
-    --border: rgba(56, 189, 248, 0.12);
-    --border-hover: rgba(56, 189, 248, 0.35);
-    --accent: #38bdf8;
-    --accent-dim: #0ea5e9;
-    --accent-muted: rgba(56, 189, 248, 0.08);
-    --teal: #2dd4bf;
-    --text-primary: #e8edf5;
-    --text-secondary: #8b9ab5;
-    --text-muted: #5a6a85;
-    --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
-    --shadow-hover: 0 8px 40px rgba(56, 189, 248, 0.12);
+    --bg-primary: #060913;
+    --bg-secondary: #0b1021;
+    --bg-card: #0f172e;
+    --bg-card-hover: #152244;
+    --border: rgba(0, 240, 144, 0.16);
+    --border-hover: rgba(0, 240, 144, 0.48);
+    --accent: #00f090;
+    --accent-dim: #00c070;
+    --accent-muted: rgba(0, 240, 144, 0.09);
+    --teal: #00d8ff;
+    --text-primary: #f0f6fc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    --shadow-hover: 0 12px 44px rgba(0, 240, 144, 0.22);
     --radius: 12px;
     --radius-lg: 20px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .light {
-    --bg-primary: #f0f4f8;
-    --bg-secondary: #e8eef5;
+    --bg-primary: #f4f8fb;
+    --bg-secondary: #eaefec;
     --bg-card: #ffffff;
-    --bg-card-hover: #f5f8fc;
-    --border: rgba(14, 165, 233, 0.15);
-    --border-hover: rgba(14, 165, 233, 0.4);
-    --accent: #0ea5e9;
-    --accent-dim: #0284c7;
-    --accent-muted: rgba(14, 165, 233, 0.06);
-    --teal: #0d9488;
-    --text-primary: #0f172a;
+    --bg-card-hover: #f0f7f4;
+    --border: rgba(0, 180, 100, 0.18);
+    --border-hover: rgba(0, 180, 100, 0.45);
+    --accent: #00aa66;
+    --accent-dim: #008850;
+    --accent-muted: rgba(0, 170, 102, 0.08);
+    --teal: #0284c7;
+    --text-primary: #0b1326;
     --text-secondary: #475569;
-    --text-muted: #94a3b8;
+    --text-muted: #64748b;
     --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-    --shadow-hover: 0 8px 40px rgba(14, 165, 233, 0.15);
+    --shadow-hover: 0 8px 40px rgba(0, 170, 102, 0.15);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -64,8 +64,8 @@
     content: '';
     position: fixed; inset: 0; z-index: 0;
     background-image:
-      linear-gradient(rgba(56,189,248,0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(56,189,248,0.03) 1px, transparent 1px);
+      linear-gradient(rgba(0,240,144,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,240,144,0.035) 1px, transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
   }
@@ -75,7 +75,7 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 0 5%; height: 64px;
-    background: rgba(10,14,26,0.88);
+    background: rgba(6,9,19,0.92);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     transition: background var(--transition);
@@ -189,7 +189,7 @@
   }
   .btn-primary:hover {
     background: var(--teal); transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(56,189,248,0.25);
+    box-shadow: 0 8px 24px rgba(0,240,144,0.3);
   }
   .btn-outline {
     background: transparent; color: var(--accent);
@@ -336,7 +336,7 @@
     border: 1px solid var(--border); padding: 3px 10px; border-radius: 99px;
   }
   .seeking-banner {
-    background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(45,212,191,0.08));
+    background: linear-gradient(135deg, rgba(0,240,144,0.08), rgba(45,212,191,0.08));
     border: 1px solid var(--border-hover); border-radius: var(--radius);
     padding: 1.5rem 2rem; display: flex; align-items: center; gap: 1.2rem; margin-top: 2rem;
   }
@@ -431,7 +431,7 @@
   }
   .resume-inner::before {
     content: ''; position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(56,189,248,0.06), transparent 70%);
+    background: radial-gradient(ellipse at 50% 0%, rgba(0,240,144,0.06), transparent 70%);
     pointer-events: none;
   }
   .resume-icon {
@@ -487,7 +487,7 @@
     transition: all var(--transition); font-family: 'Space Grotesk', sans-serif;
     display: flex; align-items: center; justify-content: center; gap: 8px;
   }
-  .form-submit:hover { background: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(56,189,248,0.25); }
+  .form-submit:hover { background: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,240,144,0.3); }
 
   /* FOOTER */
   footer {
