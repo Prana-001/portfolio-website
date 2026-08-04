@@ -606,6 +606,29 @@
         <a href="https://github.com/Prana-001" target="_blank" rel="noopener" class="btn-outline"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://www.linkedin.com/in/pranav-tomar-509301332" target="_blank" rel="noopener" class="btn-outline"><i class="fab fa-linkedin"></i> LinkedIn</a>
       </div>
+      <div class="terminal-card reveal" style="margin-bottom:2rem; background:#0b1120; border:1px solid var(--border-hover); border-radius:12px; overflow:hidden; font-family:'JetBrains Mono',monospace; box-shadow:var(--shadow);">
+        <div style="background:#0f172a; padding:10px 16px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border);">
+          <div style="display:flex; gap:6px;">
+            <span style="width:10px; height:10px; background:#ef4444; border-radius:50%; display:inline-block;"></span>
+            <span style="width:10px; height:10px; background:#f59e0b; border-radius:50%; display:inline-block;"></span>
+            <span style="width:10px; height:10px; background:#10b981; border-radius:50%; display:inline-block;"></span>
+          </div>
+          <span style="font-size:0.78rem; color:var(--accent); letter-spacing:0.5px;"><i class="fas fa-terminal" style="margin-right:6px;"></i>pranav@redteam:~# interactive_cli</span>
+          <div></div>
+        </div>
+        <div style="padding:1.2rem; font-size:0.85rem; color:var(--text-primary); max-height:220px; overflow-y:auto;" id="termOutput">
+          <div><span style="color:var(--accent);">pranav@redteam</span>:<span style="color:var(--teal);">~</span># status</div>
+          <div style="color:var(--text-secondary); margin:4px 0 10px;">[+] Cybersecurity Researcher & Red Teaming Enthusiast | TechnoHacks Intern | 3rd Year Diploma Student</div>
+          <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:8px;">
+            <span style="color:var(--accent);">pranav@redteam</span>:<span style="color:var(--teal);">~</span># Run:
+            <button type="button" onclick="window.runTermCmd('skills')" style="background:var(--accent-muted); border:1px solid var(--accent); color:var(--accent); border-radius:6px; padding:4px 12px; cursor:pointer; font-family:inherit; font-size:0.78rem; transition:all 0.2s;">skills</button>
+            <button type="button" onclick="window.runTermCmd('projects')" style="background:var(--accent-muted); border:1px solid var(--accent); color:var(--accent); border-radius:6px; padding:4px 12px; cursor:pointer; font-family:inherit; font-size:0.78rem; transition:all 0.2s;">projects</button>
+            <button type="button" onclick="window.runTermCmd('internship')" style="background:var(--accent-muted); border:1px solid var(--accent); color:var(--accent); border-radius:6px; padding:4px 12px; cursor:pointer; font-family:inherit; font-size:0.78rem; transition:all 0.2s;">internship</button>
+            <button type="button" onclick="window.runTermCmd('clear')" style="background:transparent; border:1px solid var(--border-hover); color:var(--text-muted); border-radius:6px; padding:4px 12px; cursor:pointer; font-family:inherit; font-size:0.78rem; transition:all 0.2s;">clear</button>
+          </div>
+        </div>
+      </div>
+
       <div class="hero-tags reveal">
         <span class="tag">Red Teaming</span>
         <span class="tag">VAPT</span>
@@ -1158,6 +1181,49 @@
     window.location.href = mailto;
     showToast('Opening your email client...');
   }
+
+  
+  // INTERACTIVE CLI TERMINAL
+  window.runTermCmd = function(cmd) {
+    const out = document.getElementById('termOutput');
+    if (!out) return;
+    if (cmd === 'clear') {
+      out.innerHTML = `<div><span style="color:var(--accent);">pranav@redteam</span>:<span style="color:var(--teal);">~</span># status</div><div style="color:var(--text-secondary); margin:4px 0 10px;">[+] Cybersecurity Researcher & Red Teaming Enthusiast | TechnoHacks Intern | 3rd Year Diploma Student</div><div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:8px;"><span style="color:var(--accent);">pranav@redteam</span>:<span style="color:var(--teal);">~</span># Run: <button type="button" onclick="window.runTermCmd('skills')" style="background:var(--accent-muted); border:1px solid var(--accent); color:var(--accent); border-radius:6px; padding:4px 12px; cursor:pointer; font-family:inherit; font-size:0.78rem;">skills</button> <button type="button" onclick="window.runTermCmd('projects')" style="background:var(--accent-muted); border:1px solid var(--accent); color:var(--accent); border-radius:6px; padding:4px 12px; cursor:pointer; font-family:inherit; font-size:0.78rem;">projects</button> <button type="button" onclick="window.runTermCmd('internship')" style="background:var(--accent-muted); border:1px solid var(--accent); color:var(--accent); border-radius:6px; padding:4px 12px; cursor:pointer; font-family:inherit; font-size:0.78rem;">internship</button> <button type="button" onclick="window.runTermCmd('clear')" style="background:transparent; border:1px solid var(--border-hover); color:var(--text-muted); border-radius:6px; padding:4px 12px; cursor:pointer; font-family:inherit; font-size:0.78rem;">clear</button></div>`;
+      return;
+    }
+    let res = '';
+    let targetId = '';
+    if (cmd === 'skills') {
+      res = '[+] Core Domains: Red Teaming, VAPT, Web Security, Network Forensics, Kali Linux, Python Automation';
+      targetId = 'skills';
+    } else if (cmd === 'projects') {
+      res = '[+] Live Web Apps: Web-Technology-Detector, Email-Header-Analyzer, URL-Safety-Checker';
+      targetId = 'projects';
+    } else if (cmd === 'internship') {
+      res = '[+] Current Internship: Cybersecurity Intern @ TechnoHacks (Remote) — Threat Analysis & Vulnerability Research';
+      targetId = 'experience';
+    }
+    
+    const cmdLine = document.createElement('div');
+    cmdLine.style.marginTop = '8px';
+    cmdLine.innerHTML = `<span style="color:var(--accent);">pranav@redteam</span>:<span style="color:var(--teal);">~</span># ${cmd}`;
+    const resLine = document.createElement('div');
+    resLine.style.color = 'var(--teal)';
+    resLine.style.fontSize = '0.82rem';
+    resLine.style.margin = '2px 0 6px';
+    resLine.textContent = res;
+    
+    out.appendChild(cmdLine);
+    out.appendChild(resLine);
+    out.scrollTop = out.scrollHeight;
+
+    if (targetId) {
+      setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 350);
+    }
+  };
 
   // INIT REVEAL
   window.addEventListener('load', () => {
